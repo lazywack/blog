@@ -1,0 +1,884 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>Dirsearch | 目录枚举神器 | XenoEcho</title><meta name="keywords" content="Kali,Kali tools"><meta name="author" content="XenoEcho"><meta name="copyright" content="XenoEcho"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Dirsearch | 目录枚举神器"><meta name="application-name" content="Dirsearch | 目录枚举神器"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="Dirsearch | 目录枚举神器"><meta property="og:url" content="https://www.xenoecho.us.kg/posts/e6e15f85.html"><meta property="og:site_name" content="XenoEcho"><meta property="og:description" content="简介 Dirsearch是一个用 Python 编写的命令行工具，设计用于通过使用字典攻击的方式扫描Web服务器上的目录和文件。它可以帮助渗透测试人员、红队、安全研究员等发现服务器上未公开的资源和潜在漏洞。  使用安装方法KALI安装 自带有  apt install dirsearch -y"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://imges.xenon.us.kg/20250111/kali-tools-Dirsearch.jpg"><meta property="article:author" content="XenoEcho"><meta property="article:tag" content="XenoEcho,blog,信息安全,网络安全,CTF"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://imges.xenon.us.kg/20250111/kali-tools-Dirsearch.jpg"><meta name="description" content="简介 Dirsearch是一个用 Python 编写的命令行工具，设计用于通过使用字典攻击的方式扫描Web服务器上的目录和文件。它可以帮助渗透测试人员、红队、安全研究员等发现服务器上未公开的资源和潜在漏洞。  使用安装方法KALI安装 自带有  apt install dirsearch -y"><link rel="shortcut icon" href="/img/ico/favicon.ico"><link rel="canonical" href="https://www.xenoecho.us.kg/posts/e6e15f85.html"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="hhdfFNAR-_4Wkz6BnYp2rSFVlUqk89oWUr6oROCHN8k"/><meta name="msvalidate.01" content="BF6676C212BF7DC2EB79CAD1252E5655"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/swiper.min.css" media="print" onload="this.media='all'"><script type="text/javascript">(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "pammfd1i9a");
+</script><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: undefined,
+  diytitle: undefined,
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🦥 懒癌晚期重症患","🎸 疯疯癫癫摇滚迷"]},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: XenoEcho","link":"链接: ","source":"来源: XenoEcho","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: {"enable":true,"delay":100,"shiftDelay":200},
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'XenoEcho',
+  title: 'Dirsearch | 目录枚举神器',
+  postAI: '',
+  pageFillDescription: '简介, 使用, 安装方法, KALI安装, pip下载, Github下载, 相关参数, 基本格式, 参数参考表, Mandatory（必选）, Dictionary Settings（字典设置）, General Settings（通用设置）, Request Settings（请求设置）, Connection Settings（连接设置）, Advanced Settings（高级设置）, View Settings（查看设置）, Output Settings（输出设置）, 基本参数使用, 测试站点, 指定站点普通扫描, 递归扫描, 排除状态码, 指定状态码, 指定扫描格式, 排除响应包大小, 为什么排除, 设置字典, 设置代理, 设置请求头| IP伪造, 设置IP服务器|绕过CDN请求(存疑), 文件另存为, 总结简介是一个用编写的命令行工具设计用于通过使用字典攻击的方式扫描服务器上的目录和文件它可以帮助渗透测试人员红队安全研究员等发现服务器上未公开的资源和潜在漏洞使用安装方法安装自带有下载下载相关参数基本格式必选内容指定目标指定文件扫描进度保存的会话文件可不选不指定默认不开启参数参考表必选参数说明目标可以使用多个标志指定多个列表文件从读取目标从文件加载原始请求使用标志设置协议会话文件配置文件的完整路径默认是字典设置参数说明自定义字典多个字典用逗号分隔扩展名列表用逗号分隔例如将扩展名添加到每个字典项的末尾默认情况下只会替换关键字为扩展名使用指定的扩展名覆盖字典中的其他扩展名排除的扩展名列表用逗号分隔移除路径中的扩展名例如向所有字典项添加自定义前缀用逗号分隔向所有字典项添加自定义后缀忽略目录多个后缀用逗号分隔将字典中的词转换为大写将字典中的词转换为小写将字典中的词转换为首字母大写通用设置参数说明设置线程数启用递归模式扫描子目录路径在每个目录深度上都执行递归扫描例如对每个找到的路径都执行递归扫描不仅仅是目录设置最大递归深度指定有效的状态码用于递归扫描支持范围例如扫描指定的子目录多个子目录用逗号分隔排除指定子目录进行递归扫描多个子目录用逗号分隔包含状态码多个状态码用逗号分隔支持范围例如排除状态码多个状态码用逗号分隔支持范围例如排除某些响应大小的路径多个大小用逗号分隔例如排除响应中包含指定文本的路径可以使用多个标志排除响应中匹配正则表达式的路径排除响应中包含指定重定向的路径例如排除与此页面响应类似的路径输入路径作为示例例如在遇到这些状态码时跳过目标多个状态码用逗号分隔支持范围只扫描大于指定响应长度的路径例如只扫描小于指定响应长度的路径例如设置扫描的最大运行时间秒一旦遇到错误则退出扫描请求设置参数说明设置请求方法默认为设置请求的正文数据通常用于请求从文件加载请求数据设置请求头部可以使用多个标志从文件加载请求头部跟随重定向每个请求使用随机的设置身份验证凭证格式为或设置身份验证类型如从文件加载客户端证书从文件加载客户端证书的私钥未加密设置自定义设置请求的连接设置参数说明设置连接超时设置请求之间的延迟设置代理可以使用多个标志从文件加载代理服务器设置代理认证凭证使用代理回放找到的路径使用网络作为代理设置协议当中没有协议时使用设置每秒最大请求数设置失败请求的重试次数设置服务器的地址高级设置参数说明在响应中抓取新的路径查看设置参数说明在输出中显示完整的在静默模式下自动启用显示重定向历史禁用彩色输出静默模式减少输出输出设置参数说明设置输出文件路径设置报告格式可选设置日志文件路径基本参数使用测试站点我这里使用我的博客站点进行测试为了速度我本地起了一个指定站点普通扫描默认指定字典扫描的后缀为全部递归扫描第一次扫描可以发现我有一些路径例如可以使用参数可以设置递扫描设置扫描线程数排除状态码第一次扫描看到有一些的状态码下面使用参数排除掉多个格式的话可以用分开指定状态码有排除肯定有指定了使用参数指定状态码多个状态码用分隔指定扫描格式这个可以根据站点的环境来判断像我我博客是静态部署的你扫一些肯说是没有的了字典一下子少了原本是一万多的多个格式的话可以用分开排除响应包大小这个对于真实站点信息收集时有用部分站点访问一个不存在的页面时会返回一个统一的页面具体解释看下一级标题详讲解为什么排除注意看我两个不同路径的页面返回的都是我自定义的页面也就是自定义的而且响应的包大小都是一样那么就可以使用排除掉这些页面或者简单的统一页面设置字典目录扫描的本质其实还是信息收集后续可以根据自己收集到的一些信息制作字典例如这个网站的文件名为那么可以设置个的名压缩包后缀或者使用一些常见的字典如搜索引擎的网站地图等这里就随便指定一个字典具体还有很多参数就不一一示范了设置代理这里不代理提供方法做个示例设置个超时时间设置请求头伪造的请求包中有一个请求头是包含请求的当然这种方式无法欺骗链路层这些只能欺骗应用层的一些验证为伪造的设置服务器绕过请求存疑这个参数我感觉很有意思我可以设置指定的请求啊为什么还要在设置个呢虚拟主机来说也没必要我感觉大概率可能是针对有的站点不过我不确定这里给个示范后面有错欢迎指出查看我解析的地址然后指定服务器文件另存为这个参数就不多说了总结总体来看已经可以说是很强大的目录扫描工具了集成大部分扫描中会遇到的所有问题的解决参数只不过自带的字典肯定不够看的需要指定字典来完善他的功能',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-01-24 04:53:01',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/img/ico/aesir.png"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">博客</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://pan.quark.cn/s/b15d46941933" title="文章工具"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/favicon.ico" alt="文章工具"/><span class="back-menu-item-text">文章工具</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://xenoecho.us.kg" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">XenoEcho</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-box-archive"></use></svg><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-shapes"></use></svg><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tags"></use></svg><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-link"></use></svg><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-music"></use></svg><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/books/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-book"></use></svg><span> 图书馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-pay-movies"></use></svg><span> 电影院</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/essay/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-lightbulb"></use></svg><span> 胡思乱想</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-shoe-prints"></use></svg><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Burp-Suite/" style="font-size: 1.05rem;">Burp Suite<sup>2</sup></a><a href="/tags/HTTP/" style="font-size: 1.05rem;">HTTP<sup>1</sup></a><a href="/tags/Kali/" style="font-size: 1.05rem;">Kali<sup>4</sup></a><a href="/tags/Kali-tools/" style="font-size: 1.05rem;">Kali tools<sup>3</sup></a><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>3</sup></a><a href="/tags/Shell/" style="font-size: 1.05rem;">Shell<sup>1</sup></a><a href="/tags/Sql%E6%B3%A8%E5%85%A5/" style="font-size: 1.05rem;">Sql注入<sup>1</sup></a><a href="/tags/vuInhub/" style="font-size: 1.05rem;">vuInhub<sup>4</sup></a><a href="/tags/webshell/" style="font-size: 1.05rem;">webshell<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem;">博客<sup>1</sup></a><a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" style="font-size: 1.05rem;">大模型<sup>1</sup></a><a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 1.05rem;">翻译<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/01/"><span class="card-archive-list-date">一月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/12/"><span class="card-archive-list-date">十二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/11/"><span class="card-archive-list-date">十一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div><div class="console-btn-item" id="consoleKeyboard" onclick="anzhiyu.keyboardToggle()" title="快捷键开关"><a class="keyboard-switch"><i class="anzhiyufont anzhiyu-icon-keyboard"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3/" itemprop="url">安全相关</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Kali/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Kali</span></a><a class="article-meta__tags" href="/tags/Kali-tools/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Kali tools</span></a></span></div></div><h1 class="post-title" itemprop="name headline">Dirsearch | 目录枚举神器</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2025-01-11T04:29:05.759Z" title="发表于 2025-01-11 12:29:05">2025-01-11</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2025-01-23T20:53:01.513Z" title="更新于 2025-01-24 04:53:01">2025-01-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">17k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>1:02分钟</span></span><span class="post-meta-separator"></span><span id="" data-flag-title="Dirsearch | 目录枚举神器"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span class="waline-pageview-count" data-path="/posts/e6e15f85" title="访问量"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为广东"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>广东</span><span class="post-meta-separator"></span><span class="post-meta-commentcount"><i class="anzhiyufont anzhiyu-icon-comments post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/e6e15f85#post-comment"><span class="waline-comment-count" data-path="/posts/e6e15f85"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://imges.xenon.us.kg/20250111/kali-tools-Dirsearch.jpg"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://www.xenoecho.us.kg/posts/e6e15f85"><header><a class="post-meta-categories" href="/categories/%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3/" itemprop="url">安全相关</a><a href="/tags/Kali/" tabindex="-1" itemprop="url">Kali</a><a href="/tags/Kali-tools/" tabindex="-1" itemprop="url">Kali tools</a><h1 id="CrawlerTitle" itemprop="name headline">Dirsearch | 目录枚举神器</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">XenoEcho</span><time itemprop="dateCreated datePublished" datetime="2025-01-11T04:29:05.759Z" title="发表于 2025-01-11 12:29:05">2025-01-11</time><time itemprop="dateCreated datePublished" datetime="2025-01-23T20:53:01.513Z" title="更新于 2025-01-24 04:53:01">2025-01-24</time></header><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>Dirsearch是一个用 Python 编写的命令行工具，设计用于通过使用字典攻击的方式扫描Web服务器上的目录和文件。它可以帮助渗透测试人员、红队、安全研究员等发现服务器上未公开的资源和潜在漏洞。</p>
+</blockquote>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h3><h4 id="KALI安装"><a href="#KALI安装" class="headerlink" title="KALI安装"></a>KALI安装</h4><ul>
+<li>自带有</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt install dirsearch -y</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111163831.jpg" alt="Pasted-image-20250111163831"></p>
+<h4 id="pip下载"><a href="#pip下载" class="headerlink" title="pip下载"></a>pip下载</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install dirsearch</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111164252.jpg" alt="Pasted-image-20250111164252"></p>
+<h4 id="Github下载"><a href="#Github下载" class="headerlink" title="Github下载"></a>Github下载</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/maurosoria/dirsearch.git</span><br><span class="line"><span class="built_in">cd</span> dirsearch</span><br><span class="line">pip install -r requirements.txt</span><br><span class="line">python dirsearch.py</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111164838.jpg" alt="Pasted-image-20250111164838"></p>
+<h3 id="相关参数"><a href="#相关参数" class="headerlink" title="相关参数"></a>相关参数</h3><h4 id="基本格式"><a href="#基本格式" class="headerlink" title="基本格式"></a>基本格式</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dirsearch -u &lt;target_url&gt; [options]</span><br></pre></td></tr></table></figure>
+
+<p>必选内容</p>
+<ul>
+<li><code>-u</code>指定目标url</li>
+<li><code>-l</code>指定url文件</li>
+<li><code>-s</code>扫描进度保存的会话文件(可不选，不指定默认不开启)</li>
+</ul>
+<h4 id="参数参考表"><a href="#参数参考表" class="headerlink" title="参数参考表"></a>参数参考表</h4><h5 id="Mandatory（必选）"><a href="#Mandatory（必选）" class="headerlink" title="Mandatory（必选）"></a>Mandatory（必选）</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-u URL, --url=URL</code></td>
+<td>目标 URL(s)，可以使用多个标志指定多个 URL。</td>
+</tr>
+<tr>
+<td><code>-l PATH, --url-file=PATH</code></td>
+<td>URL 列表文件。</td>
+</tr>
+<tr>
+<td><code>--stdin</code></td>
+<td>从 STDIN 读取 URL(s)。</td>
+</tr>
+<tr>
+<td><code>--cidr=CIDR</code></td>
+<td>目标 CIDR。</td>
+</tr>
+<tr>
+<td><code>--raw=PATH</code></td>
+<td>从文件加载原始 HTTP 请求（使用<code>--scheme</code> 标志设置协议）。</td>
+</tr>
+<tr>
+<td><code>-s SESSION_FILE, --session=SESSION_FILE</code></td>
+<td>会话文件。</td>
+</tr>
+<tr>
+<td><code>--config=PATH</code></td>
+<td>配置文件的完整路径，默认是<code>config.ini</code>。</td>
+</tr>
+</tbody></table>
+<h5 id="Dictionary-Settings（字典设置）"><a href="#Dictionary-Settings（字典设置）" class="headerlink" title="Dictionary Settings（字典设置）"></a>Dictionary Settings（字典设置）</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-w WORDLISTS, --wordlists=WORDLISTS</code></td>
+<td>自定义字典（多个字典用逗号分隔）。</td>
+</tr>
+<tr>
+<td><code>-e EXTENSIONS, --extensions=EXTENSIONS</code></td>
+<td>扩展名列表（用逗号分隔，例如：<code>php,asp</code>）。</td>
+</tr>
+<tr>
+<td><code>-f, --force-extensions</code></td>
+<td>将扩展名添加到每个字典项的末尾。默认情况下，<code>dirsearch</code> 只会替换 <code>%EXT%</code> 关键字为扩展名。</td>
+</tr>
+<tr>
+<td><code>-O, --overwrite-extensions</code></td>
+<td>使用<code>-e</code> 指定的扩展名覆盖字典中的其他扩展名。</td>
+</tr>
+<tr>
+<td><code>--exclude-extensions=EXTENSIONS</code></td>
+<td>排除的扩展名列表（用逗号分隔）。</td>
+</tr>
+<tr>
+<td><code>--remove-extensions</code></td>
+<td>移除路径中的扩展名（例如<code>admin.php</code> -&gt; <code>admin</code>）。</td>
+</tr>
+<tr>
+<td><code>--prefixes=PREFIXES</code></td>
+<td>向所有字典项添加自定义前缀（用逗号分隔）。</td>
+</tr>
+<tr>
+<td><code>--suffixes=SUFFIXES</code></td>
+<td>向所有字典项添加自定义后缀（忽略目录，多个后缀用逗号分隔）。</td>
+</tr>
+<tr>
+<td><code>-U, --uppercase</code></td>
+<td>将字典中的词转换为大写。</td>
+</tr>
+<tr>
+<td><code>-L, --lowercase</code></td>
+<td>将字典中的词转换为小写。</td>
+</tr>
+<tr>
+<td><code>-C, --capital</code></td>
+<td>将字典中的词转换为首字母大写。</td>
+</tr>
+</tbody></table>
+<h5 id="General-Settings（通用设置）"><a href="#General-Settings（通用设置）" class="headerlink" title="General Settings（通用设置）"></a>General Settings（通用设置）</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-t THREADS, --threads=THREADS</code></td>
+<td>设置线程数。</td>
+</tr>
+<tr>
+<td><code>-r, --recursive</code></td>
+<td>启用递归模式，扫描子目录路径。</td>
+</tr>
+<tr>
+<td><code>--deep-recursive</code></td>
+<td>在每个目录深度上都执行递归扫描（例如：<code>api/users</code> -&gt; <code>api/</code>）。</td>
+</tr>
+<tr>
+<td><code>--force-recursive</code></td>
+<td>对每个找到的路径都执行递归扫描，不仅仅是目录。</td>
+</tr>
+<tr>
+<td><code>-R DEPTH, --max-recursion-depth=DEPTH</code></td>
+<td>设置最大递归深度。</td>
+</tr>
+<tr>
+<td><code>--recursion-status=CODES</code></td>
+<td>指定有效的状态码，用于递归扫描（支持范围，例如<code>200, 300-399</code>）。</td>
+</tr>
+<tr>
+<td><code>--subdirs=SUBDIRS</code></td>
+<td>扫描指定 URL 的子目录（多个子目录用逗号分隔）。</td>
+</tr>
+<tr>
+<td><code>--exclude-subdirs=SUBDIRS</code></td>
+<td>排除指定子目录进行递归扫描（多个子目录用逗号分隔）。</td>
+</tr>
+<tr>
+<td><code>-i CODES, --include-status=CODES</code></td>
+<td>包含状态码，多个状态码用逗号分隔，支持范围（例如<code>200,300-399</code>）。</td>
+</tr>
+<tr>
+<td><code>-x CODES, --exclude-status=CODES</code></td>
+<td>排除状态码，多个状态码用逗号分隔，支持范围（例如<code>301,500-599</code>）。</td>
+</tr>
+<tr>
+<td><code>--exclude-sizes=SIZES</code></td>
+<td>排除某些响应大小的路径，多个大小用逗号分隔（例如<code>0B,4KB</code>）。</td>
+</tr>
+<tr>
+<td><code>--exclude-text=TEXTS</code></td>
+<td>排除响应中包含指定文本的路径，可以使用多个标志。</td>
+</tr>
+<tr>
+<td><code>--exclude-regex=REGEX</code></td>
+<td>排除响应中匹配正则表达式的路径。</td>
+</tr>
+<tr>
+<td><code>--exclude-redirect=STRING</code></td>
+<td>排除响应中包含指定重定向 URL 的路径（例如<code>/index.html</code>）。</td>
+</tr>
+<tr>
+<td><code>--exclude-response=PATH</code></td>
+<td>排除与此页面响应类似的路径，输入路径作为示例（例如<code>404.html</code>）。</td>
+</tr>
+<tr>
+<td><code>--skip-on-status=CODES</code></td>
+<td>在遇到这些状态码时跳过目标，多个状态码用逗号分隔，支持范围。</td>
+</tr>
+<tr>
+<td><code>--min-response-size=LENGTH</code></td>
+<td>只扫描大于指定响应长度的路径（例如<code>100B</code>、<code>4KB</code>）。</td>
+</tr>
+<tr>
+<td><code>--max-response-size=LENGTH</code></td>
+<td>只扫描小于指定响应长度的路径（例如<code>100B</code>、<code>4KB</code>）。</td>
+</tr>
+<tr>
+<td><code>--max-time=SECONDS</code></td>
+<td>设置扫描的最大运行时间（秒）。</td>
+</tr>
+<tr>
+<td><code>--exit-on-error</code></td>
+<td>一旦遇到错误则退出扫描。</td>
+</tr>
+</tbody></table>
+<h5 id="Request-Settings（请求设置）"><a href="#Request-Settings（请求设置）" class="headerlink" title="Request Settings（请求设置）"></a>Request Settings（请求设置）</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-m METHOD, --http-method=METHOD</code></td>
+<td>设置 HTTP 请求方法，默认为<code>GET</code>。</td>
+</tr>
+<tr>
+<td><code>-d DATA, --data=DATA</code></td>
+<td>设置 HTTP 请求的正文数据，通常用于<code>POST</code> 请求。</td>
+</tr>
+<tr>
+<td><code>--data-file=PATH</code></td>
+<td>从文件加载 HTTP 请求数据。</td>
+</tr>
+<tr>
+<td><code>-H HEADERS, --header=HEADERS</code></td>
+<td>设置 HTTP 请求头部，可以使用多个标志。</td>
+</tr>
+<tr>
+<td><code>--header-file=PATH</code></td>
+<td>从文件加载 HTTP 请求头部。</td>
+</tr>
+<tr>
+<td><code>-F, --follow-redirects</code></td>
+<td>跟随 HTTP 重定向。</td>
+</tr>
+<tr>
+<td><code>--random-agent</code></td>
+<td>每个请求使用随机的 User-Agent。</td>
+</tr>
+<tr>
+<td><code>--auth=CREDENTIAL</code></td>
+<td>设置身份验证凭证，格式为<code>user:password</code> 或 <code>bearer token</code>。</td>
+</tr>
+<tr>
+<td><code>--auth-type=TYPE</code></td>
+<td>设置身份验证类型（如：<code>basic</code>、<code>digest</code>、<code>bearer</code>、<code>ntlm</code>、<code>jwt</code>、<code>oauth2</code>）。</td>
+</tr>
+<tr>
+<td><code>--cert-file=PATH</code></td>
+<td>从文件加载客户端证书。</td>
+</tr>
+<tr>
+<td><code>--key-file=PATH</code></td>
+<td>从文件加载客户端证书的私钥（未加密）。</td>
+</tr>
+<tr>
+<td><code>--user-agent=USER_AGENT</code></td>
+<td>设置自定义 User-Agent。</td>
+</tr>
+<tr>
+<td><code>--cookie=COOKIE</code></td>
+<td>设置 HTTP 请求的 Cookie。</td>
+</tr>
+</tbody></table>
+<h5 id="Connection-Settings（连接设置）"><a href="#Connection-Settings（连接设置）" class="headerlink" title="Connection Settings（连接设置）"></a>Connection Settings（连接设置）</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>--timeout=TIMEOUT</code></td>
+<td>设置连接超时。</td>
+</tr>
+<tr>
+<td><code>--delay=DELAY</code></td>
+<td>设置请求之间的延迟。</td>
+</tr>
+<tr>
+<td><code>--proxy=PROXY</code></td>
+<td>设置代理 URL（HTTP&#x2F;SOCKS），可以使用多个标志。</td>
+</tr>
+<tr>
+<td><code>--proxy-file=PATH</code></td>
+<td>从文件加载代理服务器。</td>
+</tr>
+<tr>
+<td><code>--proxy-auth=CREDENTIAL</code></td>
+<td>设置代理认证凭证。</td>
+</tr>
+<tr>
+<td><code>--replay-proxy=PROXY</code></td>
+<td>使用代理回放找到的路径。</td>
+</tr>
+<tr>
+<td><code>--tor</code></td>
+<td>使用 Tor 网络作为代理。</td>
+</tr>
+<tr>
+<td><code>--scheme=SCHEME</code></td>
+<td>设置协议（当 URL 中没有协议时使用）。</td>
+</tr>
+<tr>
+<td><code>--max-rate=RATE</code></td>
+<td>设置每秒最大请求数。</td>
+</tr>
+<tr>
+<td><code>--retries=RETRIES</code></td>
+<td>设置失败请求的重试次数。</td>
+</tr>
+<tr>
+<td><code>--ip=IP</code></td>
+<td>设置服务器的 IP 地址。</td>
+</tr>
+</tbody></table>
+<h5 id="Advanced-Settings（高级设置）"><a href="#Advanced-Settings（高级设置）" class="headerlink" title="Advanced Settings（高级设置）"></a>Advanced Settings（高级设置）</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>--crawl</code></td>
+<td>在响应中抓取新的路径。</td>
+</tr>
+</tbody></table>
+<h5 id="View-Settings（查看设置）"><a href="#View-Settings（查看设置）" class="headerlink" title="View Settings（查看设置）"></a>View Settings（查看设置）</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>--full-url</code></td>
+<td>在输出中显示完整的 URL（在静默模式下自动启用）。</td>
+</tr>
+<tr>
+<td><code>--redirects-history</code></td>
+<td>显示重定向历史。</td>
+</tr>
+<tr>
+<td><code>--no-color</code></td>
+<td>禁用彩色输出。</td>
+</tr>
+<tr>
+<td><code>-q, --quiet-mode</code></td>
+<td>静默模式，减少输出。</td>
+</tr>
+</tbody></table>
+<h5 id="Output-Settings（输出设置）"><a href="#Output-Settings（输出设置）" class="headerlink" title="Output Settings（输出设置）"></a>Output Settings（输出设置）</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-o PATH, --output=PATH</code></td>
+<td>设置输出文件路径。</td>
+</tr>
+<tr>
+<td><code>--format=FORMAT</code></td>
+<td>设置报告格式（可选：<code>simple</code>、<code>plain</code>、<code>json</code>、<code>xml</code>、<code>md</code>、<code>csv</code>、<code>html</code>、<code>sqlite</code>）。</td>
+</tr>
+<tr>
+<td><code>--log=PATH</code></td>
+<td>设置日志文件路径。</td>
+</tr>
+</tbody></table>
+<h3 id="基本参数使用"><a href="#基本参数使用" class="headerlink" title="基本参数使用"></a>基本参数使用</h3><h4 id="测试站点"><a href="#测试站点" class="headerlink" title="测试站点"></a>测试站点</h4><ul>
+<li>我这里使用我的博客站点进行测试，为了速度我本地起了一个。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111171318.jpg" alt="Pasted-image-20250111171318"></li>
+</ul>
+<h4 id="指定站点普通扫描"><a href="#指定站点普通扫描" class="headerlink" title="指定站点普通扫描"></a>指定站点普通扫描</h4><ul>
+<li>默认指定字典，扫描的后缀为全部。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dirsearch -u localhost:4000</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111174455.jpg" alt="Pasted-image-20250111174455"></p>
+<h4 id="递归扫描"><a href="#递归扫描" class="headerlink" title="递归扫描"></a>递归扫描</h4><ul>
+<li>第一次扫描可以发现我有一些路径例如：<code>books</code>，可以使用<code>-r</code>参数可以设置递扫描，<code>-t</code>设置扫描线程数。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dirsearch -u localhost:4000 -r -t 25</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111174646.jpg" alt="Pasted-image-20250111174646"></p>
+<h4 id="排除状态码"><a href="#排除状态码" class="headerlink" title="排除状态码"></a>排除状态码</h4><ul>
+<li>第一次扫描看到有一些<code>301</code>的状态码，下面使用<code>-x</code>参数排除掉多个格式的话可以用<code>,</code>分开。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dirsearch -u localhost:4000 -t 25 -x 301</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111175121.jpg" alt="Pasted-image-20250111175121"></p>
+<h4 id="指定状态码"><a href="#指定状态码" class="headerlink" title="指定状态码"></a>指定状态码</h4><ul>
+<li>有排除肯定有指定了，使用<code>-i</code>参数指定状态码，多个状态码用<code>,</code>分隔。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dirsearch -u localhost:4000 -t 25 -i 200</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111175540.jpg" alt="Pasted-image-20250111175540"></p>
+<h4 id="指定扫描格式"><a href="#指定扫描格式" class="headerlink" title="指定扫描格式"></a>指定扫描格式</h4><ul>
+<li>这个可以根据站点的环境来判断像我我博客是静态部署的。你扫一些<code>jsp</code>肯说是没有的了。字典一下子少了，原本是一万多的。多个格式的话可以用<code>,</code>分开。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dirsearch -u localhost:4000 -t 25 -e html</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111175617.jpg" alt="Pasted-image-20250111175617"></p>
+<h4 id="排除响应包大小"><a href="#排除响应包大小" class="headerlink" title="排除响应包大小"></a>排除响应包大小</h4><ul>
+<li>这个对于真实站点信息收集时有用，部分站点访问一个不存在的页面时会返回一个统一的页面，具体解释看下一级标题详讲解</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dirsearch -u https://www.xenoecho.us.kg --exclude-sizes=162B</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111185905.jpg" alt="Pasted-image-20250111185905"></p>
+<h5 id="为什么排除"><a href="#为什么排除" class="headerlink" title="为什么排除"></a>为什么排除</h5><ul>
+<li>注意看我两个不同路径的页面返回的都是我自定义的页面也就是自定义的404<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111183754.jpg" alt="Pasted-image-20250111183754"></li>
+<li>而且响应的包大小都是一样，那么就可以使用<code>--exclude-sizes</code>排除掉这些404页面或者简单的统一页面。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111182028.jpg" alt="Pasted-image-20250111182028"></li>
+</ul>
+<h4 id="设置字典"><a href="#设置字典" class="headerlink" title="设置字典"></a>设置字典</h4><ul>
+<li>目录扫描的本质其实还是信息收集，后续可以根据自己收集到的一些信息制作字典，例如这个网站的文件名为<code>website</code>，那么可以设置个<code>websaite</code>的名压缩包后缀，或者使用一些常见的字典，如搜索引擎的网站地图、RSS等。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#这里就随便指定一个字典，具体还有很多参数就不一一示范了</span></span><br><span class="line">dirsearch -u http://localhost:4000/ -w db.txt</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111191428.jpg" alt="Pasted-image-20250111191428"></p>
+<h4 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h4><ul>
+<li>这里不代理提供方法，做个示例，<code>--timeout</code>设置个超时时间。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dirsearch -u https://www.xenoecho.us.kg --proxy http://127.0.0.1:10101 --<span class="built_in">timeout</span>=5</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111192421.jpg" alt="Pasted-image-20250111192421"></p>
+<h4 id="设置请求头-IP伪造"><a href="#设置请求头-IP伪造" class="headerlink" title="设置请求头| IP伪造"></a>设置请求头| IP伪造</h4><ul>
+<li><code>HTTP</code>的请求包中有一个请求头<code>X-Forwarded-For</code>是包含请求IP的，当然这种方式无法欺骗链路层这些，只能欺骗应用层的一些验证。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#192.168.1.100为伪造的IP</span></span><br><span class="line">dirsearch -u https://www.xenoecho.us.kg/ -H <span class="string">&quot;X-Forwarded-For: 192.168.1.100&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111193514.jpg" alt="Pasted-image-20250111193514"></p>
+<h4 id="设置IP服务器-绕过CDN请求-存疑"><a href="#设置IP服务器-绕过CDN请求-存疑" class="headerlink" title="设置IP服务器|绕过CDN请求(存疑)"></a>设置IP服务器|绕过CDN请求(存疑)</h4><ul>
+<li>这个参数我感觉很有意思，我可以设置指定的IP请求啊，为什么还要在设置个IP呢，虚拟主机来说也没必要，我感觉大概率可能是针对有<code>CDN</code>的站点，不过我不确定，这里给个示范。后面有错欢迎指出</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查看我解析的地址，然后指定服务器IP</span></span><br><span class="line">dirsearch -u https://www.xenoecho.us.kg/ --ip=172.67.213.41</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111194743.jpg" alt="Pasted-image-20250111194743"></p>
+<h4 id="文件另存为"><a href="#文件另存为" class="headerlink" title="文件另存为"></a>文件另存为</h4><ul>
+<li>这个参数就不多说了</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dirsearch -u http://localhost:4000/ -o 1.txt</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/Pasted-image-20250111195037.jpg" alt="Pasted-image-20250111195037"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>总体来看Dirsearch已经可以说是很强大的目录扫描工具了，集成大部分扫描中会遇到的所有问题的解决参数，只不过自带的字典肯定不够看的，需要指定字典来完善他的功能。</p>
+</blockquote>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/ico/Avatar.png" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/ico/Avatar.png" title="头像" alt="头像"></a><div class="post-copyright__author_name">XenoEcho</div><div class="post-copyright__author_desc">XenoEcho's Blog</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://www.xenoecho.us.kg/posts/e6e15f85">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://www.xenoecho.us.kg/posts/e6e15f85')">Dirsearch | 目录枚举神器</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://www.xenoecho.us.kg/posts/e6e15f85"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=Dirsearch | 目录枚举神器&amp;url=https://www.xenoecho.us.kg/posts/e6e15f85&amp;pic=https://imges.xenon.us.kg/20250111/kali-tools-Dirsearch.jpg" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.xenoecho.us.kg" target="_blank">XenoEcho</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/Kali/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>Kali<span class="tagsPageCount">4</span></a><a class="post-meta__box__tags" href="/tags/Kali-tools/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>Kali tools<span class="tagsPageCount">3</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://imges.xenon.us.kg/20250131/deepseek.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/posts/b0f5cf4f" title="Dirb | 目录枚举工具"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250113/kali-tools-Dirb.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-01-13</div><div class="title">Dirb | 目录枚举工具</div></div></a></div><div><a href="/posts/3765a405" title=" Sqlmc | Sqlmap的磨刀石"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250110/kalitools-sqlmc.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-01-04</div><div class="title"> Sqlmc | Sqlmap的磨刀石</div></div></a></div><div><a href="/posts/14692180" title="Kali Liunx 基本配置"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20241211/kali.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-12-08</div><div class="title">Kali Liunx 基本配置</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)" style="display: none">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">安装方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#KALI%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.1.</span> <span class="toc-text">KALI安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pip%E4%B8%8B%E8%BD%BD"><span class="toc-number">2.1.2.</span> <span class="toc-text">pip下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Github%E4%B8%8B%E8%BD%BD"><span class="toc-number">2.1.3.</span> <span class="toc-text">Github下载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text">相关参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F"><span class="toc-number">2.2.1.</span> <span class="toc-text">基本格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E5%8F%82%E8%80%83%E8%A1%A8"><span class="toc-number">2.2.2.</span> <span class="toc-text">参数参考表</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Mandatory%EF%BC%88%E5%BF%85%E9%80%89%EF%BC%89"><span class="toc-number">2.2.2.1.</span> <span class="toc-text">Mandatory（必选）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Dictionary-Settings%EF%BC%88%E5%AD%97%E5%85%B8%E8%AE%BE%E7%BD%AE%EF%BC%89"><span class="toc-number">2.2.2.2.</span> <span class="toc-text">Dictionary Settings（字典设置）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#General-Settings%EF%BC%88%E9%80%9A%E7%94%A8%E8%AE%BE%E7%BD%AE%EF%BC%89"><span class="toc-number">2.2.2.3.</span> <span class="toc-text">General Settings（通用设置）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Request-Settings%EF%BC%88%E8%AF%B7%E6%B1%82%E8%AE%BE%E7%BD%AE%EF%BC%89"><span class="toc-number">2.2.2.4.</span> <span class="toc-text">Request Settings（请求设置）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Connection-Settings%EF%BC%88%E8%BF%9E%E6%8E%A5%E8%AE%BE%E7%BD%AE%EF%BC%89"><span class="toc-number">2.2.2.5.</span> <span class="toc-text">Connection Settings（连接设置）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Advanced-Settings%EF%BC%88%E9%AB%98%E7%BA%A7%E8%AE%BE%E7%BD%AE%EF%BC%89"><span class="toc-number">2.2.2.6.</span> <span class="toc-text">Advanced Settings（高级设置）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#View-Settings%EF%BC%88%E6%9F%A5%E7%9C%8B%E8%AE%BE%E7%BD%AE%EF%BC%89"><span class="toc-number">2.2.2.7.</span> <span class="toc-text">View Settings（查看设置）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Output-Settings%EF%BC%88%E8%BE%93%E5%87%BA%E8%AE%BE%E7%BD%AE%EF%BC%89"><span class="toc-number">2.2.2.8.</span> <span class="toc-text">Output Settings（输出设置）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%8F%82%E6%95%B0%E4%BD%BF%E7%94%A8"><span class="toc-number">2.3.</span> <span class="toc-text">基本参数使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E7%AB%99%E7%82%B9"><span class="toc-number">2.3.1.</span> <span class="toc-text">测试站点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E7%AB%99%E7%82%B9%E6%99%AE%E9%80%9A%E6%89%AB%E6%8F%8F"><span class="toc-number">2.3.2.</span> <span class="toc-text">指定站点普通扫描</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E6%89%AB%E6%8F%8F"><span class="toc-number">2.3.3.</span> <span class="toc-text">递归扫描</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%92%E9%99%A4%E7%8A%B6%E6%80%81%E7%A0%81"><span class="toc-number">2.3.4.</span> <span class="toc-text">排除状态码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E7%8A%B6%E6%80%81%E7%A0%81"><span class="toc-number">2.3.5.</span> <span class="toc-text">指定状态码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E6%89%AB%E6%8F%8F%E6%A0%BC%E5%BC%8F"><span class="toc-number">2.3.6.</span> <span class="toc-text">指定扫描格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%92%E9%99%A4%E5%93%8D%E5%BA%94%E5%8C%85%E5%A4%A7%E5%B0%8F"><span class="toc-number">2.3.7.</span> <span class="toc-text">排除响应包大小</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8E%92%E9%99%A4"><span class="toc-number">2.3.7.1.</span> <span class="toc-text">为什么排除</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%AD%97%E5%85%B8"><span class="toc-number">2.3.8.</span> <span class="toc-text">设置字典</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="toc-number">2.3.9.</span> <span class="toc-text">设置代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%AF%B7%E6%B1%82%E5%A4%B4-IP%E4%BC%AA%E9%80%A0"><span class="toc-number">2.3.10.</span> <span class="toc-text">设置请求头| IP伪造</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEIP%E6%9C%8D%E5%8A%A1%E5%99%A8-%E7%BB%95%E8%BF%87CDN%E8%AF%B7%E6%B1%82-%E5%AD%98%E7%96%91"><span class="toc-number">2.3.11.</span> <span class="toc-text">设置IP服务器|绕过CDN请求(存疑)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%8F%A6%E5%AD%98%E4%B8%BA"><span class="toc-number">2.3.12.</span> <span class="toc-text">文件另存为</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">6</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">博客</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://pan.quark.cn/s/b15d46941933" title="文章工具"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/favicon.ico" alt="文章工具"/><span class="back-menu-item-text">文章工具</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://xenoecho.us.kg" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-box-archive"></use></svg><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-shapes"></use></svg><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tags"></use></svg><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-link"></use></svg><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-music"></use></svg><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/books/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-book"></use></svg><span> 图书馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-pay-movies"></use></svg><span> 电影院</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/essay/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-lightbulb"></use></svg><span> 胡思乱想</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-shoe-prints"></use></svg><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Burp-Suite/" style="font-size: 0.88rem;">Burp Suite<sup>2</sup></a><a href="/tags/HTTP/" style="font-size: 0.88rem;">HTTP<sup>1</sup></a><a href="/tags/Kali/" style="font-size: 0.88rem;">Kali<sup>4</sup></a><a href="/tags/Kali-tools/" style="font-size: 0.88rem;">Kali tools<sup>3</sup></a><a href="/tags/Linux/" style="font-size: 0.88rem;">Linux<sup>3</sup></a><a href="/tags/Shell/" style="font-size: 0.88rem;">Shell<sup>1</sup></a><a href="/tags/Sql%E6%B3%A8%E5%85%A5/" style="font-size: 0.88rem;">Sql注入<sup>1</sup></a><a href="/tags/vuInhub/" style="font-size: 0.88rem;">vuInhub<sup>4</sup></a><a href="/tags/webshell/" style="font-size: 0.88rem;">webshell<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 0.88rem;">博客<sup>1</sup></a><a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" style="font-size: 0.88rem;">大模型<sup>1</sup></a><a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 0.88rem;">翻译<sup>1</sup></a></div></div><hr/></div></div><div id="keyboard-tips"><div class="keyboardTitle">博客快捷键</div><div class="keybordList"><div class="keybordItem"><div class="keyGroup"><div class="key">shift K</div></div><div class="keyContent"><div class="content">关闭快捷键功能</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift A</div></div><div class="keyContent"><div class="content">打开/关闭中控台</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift M</div></div><div class="keyContent"><div class="content">播放/暂停音乐</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift D</div></div><div class="keyContent"><div class="content">深色/浅色显示模式</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift S</div></div><div class="keyContent"><div class="content">站内搜索</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift R</div></div><div class="keyContent"><div class="content">随机访问</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift H</div></div><div class="keyContent"><div class="content">返回首页</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift F</div></div><div class="keyContent"><div class="content">友链鱼塘</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift L</div></div><div class="keyContent"><div class="content">友链页面</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift P</div></div><div class="keyContent"><div class="content">关于本站</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift I</div></div><div class="keyContent"><div class="content">原版/本站右键菜单</div></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8598611923" server="tencent" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>必应搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;/music/&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.cbd.int/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script>var meting_api = "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(() => {
+  let initFn = window.walineFn || null
+
+  const initWaline = (Fn) => {
+    const waline = Fn(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://waline.xenoecho.us.kg/',
+      pageview: true,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: true,
+      imageUploader: true,
+    }, null))
+
+    const destroyWaline = () => {
+      waline.destroy()
+    }
+
+    anzhiyu.addGlobalFn('pjax', destroyWaline, 'destroyWaline')
+  }
+
+  const loadWaline = async () => {
+    if (initFn) initWaline(initFn)
+    else {
+      await getCSS('https://cdn.cbd.int/@waline/client@3.1.3/dist/waline.css')
+      if (true) await getCSS('https://cdn.cbd.int/@waline/client@3.1.3/dist/waline-meta.css')
+      const { init } = await import('https://cdn.cbd.int/@waline/client@3.1.3/dist/waline.js')
+      initFn = init || Waline.init
+      initWaline(initFn)
+      window.walineFn = initFn
+    }
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = async () => {
+    try {
+      const res = await fetch('https://waline.xenoecho.us.kg/api/comment?type=recent&count=6', { method: 'GET' })
+      const result = await res.json()
+      const walineArray = result.data.map(e => {
+        return {
+          'content': changeContent(e.comment),
+          'avatar': e.avatar,
+          'nick': e.nick,
+          'url': e.url + '#' + e.objectId,
+          'date': e.time || e.insertedAt
+        }
+      })
+      saveToLocal.set('waline-newest-comments', JSON.stringify(walineArray), 10/(60*24))
+      generateHtml(walineArray)
+    } catch (err) {
+      console.error(err)
+      const $dom = document.querySelector('#card-newest-comments .aside-list')
+      $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+    }
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('waline-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script async src="https://at.alicdn.com/t/c/font_4773714_xy6q4g0wxsg.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/"]):not([href="b"]):not([href="o"]):not([href="o"]):not([href="k"]):not([href="s"]):not([href="/"]):not([href=" "]):not([href="/"]):not([href="l"]):not([href="i"]):not([href="n"]):not([href="k"]):not([href="/"]):not([href=" "]):not([href="/"]):not([href="m"]):not([href="o"]):not([href="v"]):not([href="i"]):not([href="e"]):not([href="s"]):not([href="/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

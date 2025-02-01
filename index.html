@@ -1,0 +1,734 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>XenoEcho - XenoEcho's Blog</title><meta name="keywords" content="XenoEcho,blog,信息安全,网络安全,CTF"><meta name="author" content="XenoEcho"><meta name="copyright" content="XenoEcho"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="XenoEcho"><meta name="application-name" content="XenoEcho"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="website"><meta property="og:title" content="XenoEcho"><meta property="og:url" content="https://www.xenoecho.us.kg/index.html"><meta property="og:site_name" content="XenoEcho"><meta property="og:description"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://imges.xenon.us.kg/ico/Avatar.png"><meta property="article:author" content="XenoEcho"><meta property="article:tag" content="XenoEcho,blog,信息安全,网络安全,CTF"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://imges.xenon.us.kg/ico/Avatar.png"><meta name="description"><link rel="shortcut icon" href="/img/ico/favicon.ico"><link rel="canonical" href="https://www.xenoecho.us.kg/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="hhdfFNAR-_4Wkz6BnYp2rSFVlUqk89oWUr6oROCHN8k"/><meta name="msvalidate.01" content="BF6676C212BF7DC2EB79CAD1252E5655"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/swiper.min.css" media="print" onload="this.media='all'"><script type="text/javascript">(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "pammfd1i9a");
+</script><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: undefined,
+  diytitle: undefined,
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🦥 懒癌晚期重症患","🎸 疯疯癫癫摇滚迷"]},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: XenoEcho","link":"链接: ","source":"来源: XenoEcho","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: {"enable":true,"delay":100,"shiftDelay":200},
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'XenoEcho',
+  title: 'XenoEcho',
+  postAI: '',
+  pageFillDescription: '',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-02-02 00:14:28',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/img/ico/aesir.png"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><script>function initMourn() {
+    const date = new Date();
+    const today = (date.getMonth() + 1) + "-" + date.getDate()
+    const mourn_days = ["4-5","5-12","7-7","9-18","12-13"]
+    if (mourn_days.includes(today)) {
+        document.documentElement.style.filter = "grayscale(1)";
+    }}
+initMourn();</script><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">博客</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://pan.quark.cn/s/b15d46941933" title="文章工具"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/favicon.ico" alt="文章工具"/><span class="back-menu-item-text">文章工具</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://xenoecho.us.kg" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">XenoEcho</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-box-archive"></use></svg><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-shapes"></use></svg><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tags"></use></svg><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-link"></use></svg><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-music"></use></svg><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/books/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-book"></use></svg><span> 图书馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-pay-movies"></use></svg><span> 电影院</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/essay/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-lightbulb"></use></svg><span> 胡思乱想</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-shoe-prints"></use></svg><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Burp-Suite/" style="font-size: 1.05rem;">Burp Suite<sup>2</sup></a><a href="/tags/HTTP/" style="font-size: 1.05rem;">HTTP<sup>1</sup></a><a href="/tags/Kali/" style="font-size: 1.05rem;">Kali<sup>4</sup></a><a href="/tags/Kali-tools/" style="font-size: 1.05rem;">Kali tools<sup>3</sup></a><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>3</sup></a><a href="/tags/Shell/" style="font-size: 1.05rem;">Shell<sup>1</sup></a><a href="/tags/Sql%E6%B3%A8%E5%85%A5/" style="font-size: 1.05rem;">Sql注入<sup>1</sup></a><a href="/tags/vuInhub/" style="font-size: 1.05rem;">vuInhub<sup>4</sup></a><a href="/tags/webshell/" style="font-size: 1.05rem;">webshell<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem;">博客<sup>1</sup></a><a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" style="font-size: 1.05rem;">大模型<sup>1</sup></a><a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 1.05rem;">翻译<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/01/"><span class="card-archive-list-date">一月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/12/"><span class="card-archive-list-date">十二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/11/"><span class="card-archive-list-date">十一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div><div class="console-btn-item" id="consoleKeyboard" onclick="anzhiyu.keyboardToggle()" title="快捷键开关"><a class="keyboard-switch"><i class="anzhiyufont anzhiyu-icon-keyboard"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav></header><main id="blog-container"><div class="bbTimeList container" id="bbTimeList"><i class="anzhiyufont anzhiyu-icon-jike bber-logo fontbold" onclick="pjax.loadUrl(&quot;/essay/&quot;);" title="即刻短文" href="javascript:void(0);" aria-hidden="true"></i><div class="swiper-container swiper-no-swiping essay_bar_swiper_container" id="bbtalk" tabindex="-1"><div class="swiper-wrapper" id="bber-talk" onclick="pjax.loadUrl(&quot;/essay/&quot;);"><a class="li-style swiper-slide" href="javascript:void(0);">忙忙碌碌。碌碌无为。</a></div></div><a class="bber-gotobb anzhiyufont anzhiyu-icon-circle-arrow-right" onclick="pjax.loadUrl(&quot;/essay/&quot;);" href="javascript:void(0);" title="查看全文"></a></div><script src="/js/swiper.min.js"></script><div id="home_top"><div class="swiper_container_card" style="height: auto;width: 100%"><div id="bannerGroup"><div id="random-banner"><div class="banners-title"><div class="banners-title-big">内心丰盈者</div><div class="banners-title-big">独行也独众</div><div class="banners-title-small"></div></div><div id="skills-tags-group-all"><div class="tags-group-wrapper"><div class="tags-group-icon-pair"><div class="tags-group-icon" style="background: #2689EE"><img class="no-lightbox" title="Kali" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/kali.png" size="60px" alt="Kali"></div><div class="tags-group-icon" style="background: #458ee6"><img class="no-lightbox" title="Docker" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/docker.png" size="60px" alt="Docker"></div></div><div class="tags-group-icon-pair"><div class="tags-group-icon" style="background: #fff"><img class="no-lightbox" title="MySQL" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/mysql.png" size="60px" alt="MySQL"></div><div class="tags-group-icon" style="background: #fff"><img class="no-lightbox" title="BASH" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/bash.png" size="60px" alt="BASH"></div></div><div class="tags-group-icon-pair"><div class="tags-group-icon" style="background: #e9572b"><img class="no-lightbox" title="HTML" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/html.png" size="60px" alt="HTML"></div><div class="tags-group-icon" style="background: #df5b40"><img class="no-lightbox" title="Git" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/git.png" size="60px" alt="Git"></div></div><div class="tags-group-icon-pair"><div class="tags-group-icon" style="background: #2689EE"><img class="no-lightbox" title="Kali" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/kali.png" size="60px" alt="Kali"></div><div class="tags-group-icon" style="background: #458ee6"><img class="no-lightbox" title="Docker" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/docker.png" size="60px" alt="Docker"></div></div><div class="tags-group-icon-pair"><div class="tags-group-icon" style="background: #fff"><img class="no-lightbox" title="MySQL" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/mysql.png" size="60px" alt="MySQL"></div><div class="tags-group-icon" style="background: #fff"><img class="no-lightbox" title="BASH" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/bash.png" size="60px" alt="BASH"></div></div><div class="tags-group-icon-pair"><div class="tags-group-icon" style="background: #e9572b"><img class="no-lightbox" title="HTML" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/html.png" size="60px" alt="HTML"></div><div class="tags-group-icon" style="background: #df5b40"><img class="no-lightbox" title="Git" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/git.png" size="60px" alt="Git"></div></div></div></div><a id="random-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-paper-plane"></i><div class="bannerText">随便逛逛<i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div></a></div><div class="categoryGroup"><div class="categoryItem" style="box-shadow:var(--anzhiyu-shadow-blue)"><a class="categoryButton blue" href="/categories/%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3/"><span class="categoryButtonText">安全相关</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-a-Kalilinux"></use></svg></a></div><div class="categoryItem" style="box-shadow:var(--anzhiyu-shadow-red)"><a class="categoryButton red" href="/categories/%E4%B8%8D%E5%8A%A1%E6%AD%A3%E4%B8%9A/"><span class="categoryButtonText">不务正业</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-life"></use></svg></a></div><div class="categoryItem" style="box-shadow:var(--anzhiyu-shadow-green)"><a class="categoryButton green" href="/categories/%E7%94%9F%E6%B4%BB/"><span class="categoryButtonText">生活</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-book"></use></svg></a></div></div></div><div class="topGroup"><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/posts/5b7c57ab&quot;)"><div class="post_cover left_radius"><a href="posts/5b7c57ab.html" title="Sudo命令的配置及使用"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250120/sudo.jpg"></a></div><div class="recent-post-info"><a class="article-title" href="posts/5b7c57ab.html" title="Sudo命令的配置及使用">Sudo命令的配置及使用</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/posts/782cd2fe&quot;)"><div class="post_cover left_radius"><a href="posts/782cd2fe.html" title="SQL注入测试步骤|注入类型"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250117/SQL.jpg"></a></div><div class="recent-post-info"><a class="article-title" href="posts/782cd2fe.html" title="SQL注入测试步骤|注入类型">SQL注入测试步骤|注入类型</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/posts/56437b95&quot;)"><div class="post_cover left_radius"><a href="posts/56437b95.html" title="Burp Suite基本用法"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20241211/bp2.jpg"></a></div><div class="recent-post-info"><a class="article-title" href="posts/56437b95.html" title="Burp Suite基本用法">Burp Suite基本用法</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/posts/c13184bb&quot;)"><div class="post_cover left_radius"><a href="posts/c13184bb.html" title="Burp Sutie光标位移"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20241108/OIP-C.92q5beywek.4g4idfa5v9.jpg"></a></div><div class="recent-post-info"><a class="article-title" href="posts/c13184bb.html" title="Burp Sutie光标位移">Burp Sutie光标位移</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/posts/b0f5cf4f&quot;)"><div class="post_cover left_radius"><a href="posts/b0f5cf4f.html" title="Dirb | 目录枚举工具"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250113/kali-tools-Dirb.jpg"></a></div><div class="recent-post-info"><a class="article-title" href="posts/b0f5cf4f.html" title="Dirb | 目录枚举工具">Dirb | 目录枚举工具</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/posts/e6e15f85&quot;)"><div class="post_cover left_radius"><a href="posts/e6e15f85.html" title="Dirsearch | 目录枚举神器"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/kali-tools-Dirsearch.jpg"></a></div><div class="recent-post-info"><a class="article-title" href="posts/e6e15f85.html" title="Dirsearch | 目录枚举神器">Dirsearch | 目录枚举神器</a></div></div><a class="todayCard" id="todayCard" href="/null" style="z-index: 1;"><div class="todayCard-info"><div class="todayCard-tips">小标题</div><div class="todayCard-title">文章标题</div></div><img class="todayCard-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/null" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="封面"><div class="banner-button-group"><div class="banner-button" onclick="event.stopPropagation();event.preventDefault();anzhiyu.hideTodayCard();"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i><span class="banner-button-text">更多推荐</span></div></div></a></div><link rel="stylesheet"></div></div><div class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div id="categoryBar"><div class="category-bar" id="category-bar"><div id="catalog-bar"><div id="catalog-list"><div class="catalog-list-item" id="首页"><a href="/">首页</a></div>
+    <div class="catalog-list-item" id="/categories/安全相关/">
+      <a href="/categories/安全相关/">
+        安全相关
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/杂七杂八的问题/">
+      <a href="/categories/杂七杂八的问题/">
+        杂七杂八的问题
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/Linux/">
+      <a href="/categories/Linux/">
+        Linux
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/博客/">
+      <a href="/categories/博客/">
+        博客
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/不务正业/">
+      <a href="/categories/不务正业/">
+        不务正业
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/categories/日常工具/">
+      <a href="/categories/日常工具/">
+        日常工具
+      </a>
+    </div>
+    </div><div class="category-bar-next" id="category-bar-next" onclick="anzhiyu.scrollCategoryBarToRight()"><i class="anzhiyufont anzhiyu-icon-angle-double-right"></i></div><a class="catalog-more" href="/categories/">更多</a></div></div></div><div class="recent-post-item lastestpost-item" onclick="pjax.loadUrl('/posts/b218bd65')"><div class="post_cover left"><a href="/posts/b218bd65" title="突破限制，本地部署deepseek模型！" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250131/deepseek.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="突破限制，本地部署deepseek模型！" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">不务正业</div><span class="newPost">最新</span><a class="unvisited-post" href="/posts/b218bd65" title="突破限制，本地部署deepseek模型！">未读</a></div><a class="article-title" href="/posts/b218bd65" title="突破限制，本地部署deepseek模型！">突破限制，本地部署deepseek模型！</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-01-30T13:39:42.551Z" title="发表于 2025-01-30 21:39:42" time="2025-01-30 21:39:42">2025-01-30</time><time class="time_hidden" datetime="2025-01-30T13:41:03.997Z" title="更新于 2025-01-30 21:41:03" time="2025-01-30 21:41:03">2025-01-30</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>大模型</span></a></span><span class="article-meta"><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-comments"></i><a href="/posts/b218bd65#post-comment"><span class="waline-comment-count" id="/posts/b218bd65"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">简述
+前段时间推出的DeepSeek R1推理模型，与传统的大型语言模型有些不同，它能模拟逐步思考的过程，将复杂问题分解为更小的逻辑步骤，再得出解决方案，在数学推理、编程辅助和决策制定等需要深度理解的任务上表现更出色。这里也提供了两种方法来本地运行官方开源的模型。
+
+ollama部署下载安装程序
+在官网点击Download下载对应系统的安装程序。
+
+安装ollama
+C盘够大的打开直接install即可
+如果你想安装到指定目录可以在安装程序目录上方输入CMD打开命令行窗口
+然后执行下方命令
+
+OllamaSetup.exe /DIR=&quot;d:\ollama&quot;#OllamaSetup.exe 下载的安装程序名#d:\ollama 安装的路径
+
+
+下载模型
+找到模型并打开页面
+选择模型大小。正常情况下根据自己的显卡显存选择，比如显存8G就选择8B的模型
+命令行打开执行安装模型，后即可完成。
+
+更换模型目录&#x2F;端口
+默认模型存放位置是在C盘的C:\Users\用户名\.ollama\models下。
+打开设置的高级系统设置，设置一个新环境变量名字OLLAMA_MOD ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/posts/5b7c57ab')"><div class="post_cover left"><a href="/posts/5b7c57ab" title="Sudo命令的配置及使用" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250120/sudo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Sudo命令的配置及使用" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">Linux</div><a class="unvisited-post" href="/posts/5b7c57ab" title="Sudo命令的配置及使用">未读</a></div><a class="article-title" href="/posts/5b7c57ab" title="Sudo命令的配置及使用">Sudo命令的配置及使用</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-01-20T01:44:40.484Z" title="发表于 2025-01-20 09:44:40" time="2025-01-20 09:44:40">2025-01-20</time><time class="time_hidden" datetime="2025-01-20T01:46:03.107Z" title="更新于 2025-01-20 09:46:03" time="2025-01-20 09:46:03">2025-01-20</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Linux/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Linux</span></a></span><span class="article-meta"><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-comments"></i><a href="/posts/5b7c57ab#post-comment"><span class="waline-comment-count" id="/posts/5b7c57ab"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">概念
+sudo 命令是 Linux 系统中一个非常重要的工具，它允许普通用户以超级用户（通常是 root）或其他用户的身份执行命令。从概念上来说，在普通用户在权限不够的时候，通过 sudo 命令 “摇人”，这个 “人” 就是拥有更高权限的用户（通常是 root）。sudoers文件在etc目录下。通过使用命令visudo来进行编辑，因为它具有检测功能。
+
+Sudo文件格式目录结构
+
+
+名称
+位置
+说明
+
+
+
+/etc/sudoers
+/etc/sudoers
+sudo 的核心配置文件，使用 visudo 编辑，定义用户或组的 sudo 权限。
+
+
+/etc/sudoers.d/
+/etc/sudoers.d/
+存放sudo 配置文件的子目录，权限设为 440，系统会自动读取。
+
+
+/var/log/auth.log
+/var/log/auth.log
+记录sudo 使用情况的日志文件，用于审计和故障排除。
+
+
+/usr/bin/sudo
+/usr/bin/sudo
+sudo 命令的可执行文件位置。
+
+
+/usr/lib/sudo/
+/usr/lib/sudo/
+包含sudo 相关的库和 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/posts/782cd2fe')"><div class="post_cover left"><a href="/posts/782cd2fe" title="SQL注入测试步骤|注入类型" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250117/SQL.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SQL注入测试步骤|注入类型" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">安全相关</div><a class="unvisited-post" href="/posts/782cd2fe" title="SQL注入测试步骤|注入类型">未读</a></div><a class="article-title" href="/posts/782cd2fe" title="SQL注入测试步骤|注入类型">SQL注入测试步骤|注入类型</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-01-17T07:07:45.926Z" title="发表于 2025-01-17 15:07:45" time="2025-01-17 15:07:45">2025-01-17</time><time class="time_hidden" datetime="2025-01-17T07:29:39.129Z" title="更新于 2025-01-17 15:29:39" time="2025-01-17 15:29:39">2025-01-17</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Sql%E6%B3%A8%E5%85%A5/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Sql注入</span></a></span><span class="article-meta"><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-comments"></i><a href="/posts/782cd2fe#post-comment"><span class="waline-comment-count" id="/posts/782cd2fe"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">简介
+测试的靶机为综合靶机DVWA，为基础步骤，没有前段过滤。
+
+查找注入点
+注入点不仅仅局限于网页上可见的输入框，而是取决于请求包中传递的值。这些值可以存在于： * URL 中的 GET 传参： 参数直接显示在 URL 中，例如 http://longyusec/index.php?id=1。
+POST 传参： 用于传输大量数据或敏感信息，参数值在请求体中，例如提交表单数据。
+请求头 (Headers)： 例如 User-Agent、Referer、Cookie 等。
+Cookie： 存储在用户浏览器中的小型文本文件。
+
+
+
+判断是否存在注入 (构造闭合)什么是构造闭合？
+
+构造闭合是指通过修改请求参数的值，来闭合原本的 SQL 语句结构，从而插入我们自己的恶意 SQL 代码。 观察源代码：
+假设我们有以下 PHP 代码（虽然在实际测试中通常看不到）：
+
+$query  = &quot;SELECT first_name, last_name FROM users WHERE user_id = &#x27;$id&#x27;;&quot;;
+
+在这个 SQL 查询语句中，我们可以控 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/posts/78c75926')"><div class="post_cover left"><a href="/posts/78c75926" title="Kioptrix-Leve Four 综合靶机实战思路" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250114/Kioptrix-Level-Four.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Kioptrix-Leve Four 综合靶机实战思路" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">安全相关</div><a class="unvisited-post" href="/posts/78c75926" title="Kioptrix-Leve Four 综合靶机实战思路">未读</a></div><a class="article-title" href="/posts/78c75926" title="Kioptrix-Leve Four 综合靶机实战思路">Kioptrix-Leve Four 综合靶机实战思路</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-01-15T04:18:24.801Z" title="发表于 2025-01-15 12:18:24" time="2025-01-15 12:18:24">2025-01-15</time><time class="time_hidden" datetime="2025-01-15T04:20:38.757Z" title="更新于 2025-01-15 12:20:38" time="2025-01-15 12:20:38">2025-01-15</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/vuInhub/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>vuInhub</span></a></span><span class="article-meta"><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-comments"></i><a href="/posts/78c75926#post-comment"><span class="waline-comment-count" id="/posts/78c75926"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">基本信息
+
+
+靶机名称
+Kioptrix-Leve 1.4
+
+
+
+攻击机
+192.168.109.129
+
+
+靶机
+192.168.109.128
+
+
+前期信息收集Nmap服务版本
+只开放80和22端口。还有两个smb服务端口
+
+目录扫描
+发现存在三个目录images、john、robert。
+
+指纹
+Smb版本信息
+使用Nmap脚本确定版本信息
+
+信息整合
+
+
+端口号
+服务名称
+服务版本
+
+
+
+22
+ssh
+OpenSSH 4.7p1 Debian 8ubuntu1.2（协议2.0）
+
+
+80
+http
+Apache httpd 2.2.8（Ubuntu） PHP&#x2F;5.2.4-2ubuntu5.6 with Suhosin-Patch
+
+
+139
+netbios-ssn
+Samba 3.0.28a (unix)
+
+
+445
+netbios-ssn
+Samba 3.0.28a (unix)
+
+
+页面测试根据信息查找POCApache版本漏洞
+暂未发现符合poc
+
+SSH服务
+暂未发现什么有价值poc
+
+Smb服务
+暂未发现有用
+
+Web测试|80目录收集images站点图片目 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/posts/b0f5cf4f')"><div class="post_cover left"><a href="/posts/b0f5cf4f" title="Dirb | 目录枚举工具" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250113/kali-tools-Dirb.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Dirb | 目录枚举工具" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">安全相关</div><a class="unvisited-post" href="/posts/b0f5cf4f" title="Dirb | 目录枚举工具">未读</a></div><a class="article-title" href="/posts/b0f5cf4f" title="Dirb | 目录枚举工具">Dirb | 目录枚举工具</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-01-13T07:45:28.756Z" title="发表于 2025-01-13 15:45:28" time="2025-01-13 15:45:28">2025-01-13</time><time class="time_hidden" datetime="2025-01-23T20:45:25.171Z" title="更新于 2025-01-24 04:45:25" time="2025-01-24 04:45:25">2025-01-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Kali/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Kali</span></a><a class="article-meta__tags" href="/tags/Kali-tools/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Kali tools</span></a></span><span class="article-meta"><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-comments"></i><a href="/posts/b0f5cf4f#post-comment"><span class="waline-comment-count" id="/posts/b0f5cf4f"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">简介
+dirb 是 Kali Linux 中一个强大的目录和文件强制枚举工具，用于在 Web 渗透测试中查找隐藏的目录和文件。它通过字典攻击的方式枚举目标网站可能存在的目录和文件，还可以通过检测 HTTP 响应码、响应大小等方式判断哪些路径是有效的。
+
+使用安装
+Dirb基于libcurl开发因此只能通过包管理或者源代码编译安装。windows中需要使用的话可以利用wsl来使用。
+
+包管理器安装apt install dirb
+
+
+Dirb基本用法dirb &lt;目标URL&gt; [字典文件] [选项]
+
+命令参数
+
+
+参数
+说明
+示例使用
+
+
+
+-a &lt;agent_string&gt;
+自定义用户代理字符串 (User-Agent)，用于模拟特定浏览器或绕过简单的反爬虫措施
+dirb http://example.com/ -a &quot;Mozilla/5.0&quot;
+
+
+-b
+使用原始路径，不做任何附加处理（不会自动加/）
+dirb http://example.com/ -b
+
+
+-c &lt;cookie_string&gt;
+设置 HTTP 请求中的 Coo ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/posts/e6e15f85')"><div class="post_cover left"><a href="/posts/e6e15f85" title="Dirsearch | 目录枚举神器" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250111/kali-tools-Dirsearch.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Dirsearch | 目录枚举神器" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">安全相关</div><a class="unvisited-post" href="/posts/e6e15f85" title="Dirsearch | 目录枚举神器">未读</a></div><a class="article-title" href="/posts/e6e15f85" title="Dirsearch | 目录枚举神器">Dirsearch | 目录枚举神器</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-01-11T04:29:05.759Z" title="发表于 2025-01-11 12:29:05" time="2025-01-11 12:29:05">2025-01-11</time><time class="time_hidden" datetime="2025-01-23T20:53:01.513Z" title="更新于 2025-01-24 04:53:01" time="2025-01-24 04:53:01">2025-01-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Kali/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Kali</span></a><a class="article-meta__tags" href="/tags/Kali-tools/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Kali tools</span></a></span><span class="article-meta"><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-comments"></i><a href="/posts/e6e15f85#post-comment"><span class="waline-comment-count" id="/posts/e6e15f85"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">简介
+Dirsearch是一个用 Python 编写的命令行工具，设计用于通过使用字典攻击的方式扫描Web服务器上的目录和文件。它可以帮助渗透测试人员、红队、安全研究员等发现服务器上未公开的资源和潜在漏洞。
+
+使用安装方法KALI安装
+自带有
+
+apt install dirsearch -y
+
+
+pip下载pip install dirsearch
+
+
+Github下载git clone https://github.com/maurosoria/dirsearch.gitcd dirsearchpip install -r requirements.txtpython dirsearch.py
+
+
+相关参数基本格式dirsearch -u &lt;target_url&gt; [options]
+
+必选内容
+
+-u指定目标url
+-l指定url文件
+-s扫描进度保存的会话文件(可不选，不指定默认不开启)
+
+参数参考表Mandatory（必选）
+
+
+参数
+说明
+
+
+
+-u URL, --url=URL
+目标 URL(s)，可以使用多个标志指定多个 URL。
+
+
+-l PATH, -- ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/posts/148369d4')"><div class="post_cover left"><a href="/posts/148369d4" title="Kioptrix-Leve Three 综合靶机实战思路" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250107/Kioptrix-Level-Three.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Kioptrix-Leve Three 综合靶机实战思路" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">安全相关</div><a class="unvisited-post" href="/posts/148369d4" title="Kioptrix-Leve Three 综合靶机实战思路">未读</a></div><a class="article-title" href="/posts/148369d4" title="Kioptrix-Leve Three 综合靶机实战思路">Kioptrix-Leve Three 综合靶机实战思路</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-01-07T04:45:07.271Z" title="发表于 2025-01-07 12:45:07" time="2025-01-07 12:45:07">2025-01-07</time><time class="time_hidden" datetime="2025-01-07T04:49:24.800Z" title="更新于 2025-01-07 12:49:24" time="2025-01-07 12:49:24">2025-01-07</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/vuInhub/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>vuInhub</span></a></span><span class="article-meta"><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-comments"></i><a href="/posts/148369d4#post-comment"><span class="waline-comment-count" id="/posts/148369d4"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">基本信息
+基本信息攻击机:192.168.38.128；靶机:192.168.38.132
+
+web样式无法显示的问题
+原因：样式是以这个域名为基准链接的，而这个域名解析其实要到本地靶机的地址的。修改hosts文件，将这个域名指向靶机地址，然后刷新一下就可以正常显示了。
+
+echo &quot;192.168.38.132 kioptrix3.com&quot; &gt;&gt;/etc/hosts
+
+
+信息收集dirb目录扫描
+dirsearch目录扫描
+whatweb指纹
+nmap服务扫描
+只有80和22端口开放的
+
+主机详细信息
+操作系统：Ubuntu Liunx
+内核版本：Linux 2.6.9 - 2.6.33
+
+服务信息
+
+
+端口
+服务
+版本
+
+
+
+22&#x2F;tcp
+ssh
+OpenSSH 4.7p1
+
+
+80&#x2F;tcp
+http
+Apache httpd 2.2.8
+
+
+
+php
+5.2.4-2ubuntu5.6
+
+
+查找攻击点Web服务|80
+页面探索
+
+根据扫描出来的页面进行访问查看有无可疑点，例如常见的一些Web漏洞。
+
+
+cache路径
+三个页面返回 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/posts/3765a405')"><div class="post_cover left"><a href="/posts/3765a405" title=" Sqlmc | Sqlmap的磨刀石" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20250110/kalitools-sqlmc.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt=" Sqlmc | Sqlmap的磨刀石" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">安全相关</div><a class="unvisited-post" href="/posts/3765a405" title=" Sqlmc | Sqlmap的磨刀石">未读</a></div><a class="article-title" href="/posts/3765a405" title=" Sqlmc | Sqlmap的磨刀石"> Sqlmc | Sqlmap的磨刀石</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-01-04T03:29:07.764Z" title="发表于 2025-01-04 11:29:07" time="2025-01-04 11:29:07">2025-01-04</time><time class="time_hidden" datetime="2025-01-23T20:46:06.907Z" title="更新于 2025-01-24 04:46:06" time="2025-01-24 04:46:06">2025-01-24</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Kali/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Kali</span></a><a class="article-meta__tags" href="/tags/Kali-tools/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Kali tools</span></a></span><span class="article-meta"><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-comments"></i><a href="/posts/3765a405#post-comment"><span class="waline-comment-count" id="/posts/3765a405"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">简介介绍
+Kali Linux 2024.3 版本，新增了 11 款安全工具之一，SQLMC（SQL Injection Massive Checker）一款用于扫描域以查找 SQL 注入漏洞的工具。它能按照指定深度抓取给定的 URL，检查每个链接是否存在 SQL 注入漏洞，扫描和检测域中可能存在的 SQL 注入漏洞。其目标是简化 SQLMap 的使用流程，为安全测试提供更快速的操作界面和功能支持。
+
+使用安装方式目前有三种途径下载
+一、通过KALI的包管理器apt-get install sqlmc -y
+
+
+二、pip包管理器安装#如果是python3自行更改pip install sqlmc
+
+
+三、下载源代码使用git clone https://github.com/malvads/sqlmc.gitcd sqlmc#创建虚拟环境，如果你不需要掠过这一步python3 -m venv sqlmcsource sqlmc/bin/activate#安装相关依赖pip install -r requirements.txt#启动测试python3 setup.py
+
+
+相关参数基 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/posts/41d7331c')"><div class="post_cover left"><a href="/posts/41d7331c" title="英语小白的阅读指南：工具篇" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/ico/spacexcode-coverview-169@2x.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="英语小白的阅读指南：工具篇" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">日常工具</div><a class="unvisited-post" href="/posts/41d7331c" title="英语小白的阅读指南：工具篇">未读</a></div><a class="article-title" href="/posts/41d7331c" title="英语小白的阅读指南：工具篇">英语小白的阅读指南：工具篇</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2024-12-29T02:41:08.242Z" title="发表于 2024-12-29 10:41:08" time="2024-12-29 10:41:08">2024-12-29</time><time class="time_hidden" datetime="2024-12-29T02:45:38.561Z" title="更新于 2024-12-29 10:45:38" time="2024-12-29 10:45:38">2024-12-29</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E7%BF%BB%E8%AF%91/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>翻译</span></a></span><span class="article-meta"><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-comments"></i><a href="/posts/41d7331c#post-comment"><span class="waline-comment-count" id="/posts/41d7331c"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">序章在准备 OSCP 的过程中，我发现不少朋友因英语基础薄弱，面对命令报错等英文问题时常常陷入苦恼。这让我感同身受，因为我自己就是一个从农村走出来的孩子。从小学到初中，在村里的学校上学，几乎没有正经上过英语课，很长一段时间里，我对英文的认知仅仅停留在认识 26 个字母而已。在这样的情况下，每次遇到英文内容，单纯依靠自己去理解几乎是不可能的，只能借助翻译工具来辅助阅读。一路走来，积累了不少经验，也发现了许多实用的工具，今天就想借此机会，给大家分享一下我在日常学习中使用的这些 “秘密武器”，希望能帮助同样在英语困境中挣扎的朋友们。
+当前装备现在我主要是利用TTime和沉浸式翻译来辅助我日常翻译英语，TTime他主要是利用OCR识别单词然后利用接入的各大翻译平台的API来进行翻译，OCR识别来说我使用较少，大部分都是选中不认识的单词部分直接划词翻译的。沉浸式翻译的话那这个可就太解决大部分网页浏览的翻译问题，大家都知道google翻译现在已经撤出中国市场了。我也不可能说一整天开着个代理去翻译吧，这个就太麻烦了。
+下载地址如果你只想拿工具直接关注公众发送翻译工具即可获取官网下载链接或者博客主页右 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/posts/40011d74')"><div class="post_cover left"><a href="/posts/40011d74" title="博客序章" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/20241228/blog1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="博客序章" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">博客</div><div class="article-categories-original">不务正业</div><a class="unvisited-post" href="/posts/40011d74" title="博客序章">未读</a></div><a class="article-title" href="/posts/40011d74" title="博客序章">博客序章</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2024-12-27T12:01:45.383Z" title="发表于 2024-12-27 20:01:45" time="2024-12-27 20:01:45">2024-12-27</time><time class="time_hidden" datetime="2024-12-27T13:33:32.764Z" title="更新于 2024-12-27 21:33:32" time="2024-12-27 21:33:32">2024-12-27</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E5%8D%9A%E5%AE%A2/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>博客</span></a></span><span class="article-meta"><span class="article-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-comments"></i><a href="/posts/40011d74#post-comment"><span class="waline-comment-count" id="/posts/40011d74"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">序章
+为什么打算搭建博客？
+很多时候我看了一本书，心中突然冒出的一个想法，甚至是突然学到了一个东西却没有及时的记录他，等过段时间去回想书中的内容时就，书中的那些概念理论会一下子忘却了，变成了空谈的大道理。下次遇到相同的问题的时候明明之前有解决的但是脑子也是抽了一样只会CTRL C+CTRL V重复一次又一次。特别是时不时翻到之前写的垃圾Note把自己拉进坑了一次又一次，却懒得重新去修正。就会陷入我明明知道之前的是错的不够完善的，这次知道了，后面去回看还是会掉入以前挖的大坑中……于是就开始使用obsidian开始记录自己的阅读以及一些课堂Note，但是输入也只能是输入，为了后续能够更好的去完善所学的知识，不至于自我满足的状态，就搭建一个博客平台，来帮助我从obsidian里输出内容。以及记录些自身一些想法等。
+
+
+博客的总体架构
+截止目前的话博客的整体结构是：采用于pages部署在github上，博客框架为hexo、加上github图床、配上一个域名解析。目前基本能够正常使用。
+
+
+
+博客框架选择
+目前市面上有太多博客框架，主要分为两种类型：动态、静态
+动态的：WordPress、hal ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><div class="pagination_tips_next">下页</div><i style="font-weight: inherit; font-size: 1rem;" class="anzhiyufont anzhiyu-icon-chevron-right fa-fw"></i></a><div class="toPageGroup"><input id="toPageText" oninput="value=value.replace(/[^0-9]/g,'')" maxlength="3" onkeyup="this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')" aria-label="toPage"><a id="toPageButton" onclick="anzhiyu.toPage()"><i class="anzhiyufont anzhiyu-icon-angles-right" style="font-weight: inherit; font-size: 1rem;"></i></a></div></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/ico/Avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imges.xenon.us.kg/ZT/xenon001_r001.png" alt="status"/></div></div><div class="author-info__description"></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">XenoEcho</h1><div class="author-info__desc">XenoEcho's Blog</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://www.cnblogs.com/XenoEcho" target="_blank" title="博客园"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-bokeyuan"></use></svg></a><a class="social-icon faa-parent animated-hover" href="mailto:mail@xenon.us.kg" target="_blank" title="邮箱"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-email"></use></svg></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content">博客内的相关工具文件可以在主页右上角内的“文章工具”中下载。</div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://imges.xenon.us.kg/ico/white.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://imges.xenon.us.kg/ico/black.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget"><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Burp-Suite/" style="font-size: 1.05rem;">Burp Suite<sup>2</sup></a><a href="/tags/HTTP/" style="font-size: 1.05rem;">HTTP<sup>1</sup></a><a href="/tags/Kali/" style="font-size: 1.05rem;">Kali<sup>4</sup></a><a href="/tags/Kali-tools/" style="font-size: 1.05rem;">Kali tools<sup>3</sup></a><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>3</sup></a><a href="/tags/Shell/" style="font-size: 1.05rem;">Shell<sup>1</sup></a><a href="/tags/Sql%E6%B3%A8%E5%85%A5/" style="font-size: 1.05rem;">Sql注入<sup>1</sup></a><a href="/tags/vuInhub/" style="font-size: 1.05rem;">vuInhub<sup>4</sup></a><a href="/tags/webshell/" style="font-size: 1.05rem;">webshell<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem;">博客<sup>1</sup></a><a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" style="font-size: 1.05rem;">大模型<sup>1</sup></a><a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 1.05rem;">翻译<sup>1</sup></a></div></div><hr/><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/01/"><span class="card-archive-list-date">一月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/12/"><span class="card-archive-list-date">十二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/11/"><span class="card-archive-list-date">十一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li></ul></div><hr/><div class="card-webinfo"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-file-lines"></i><div class="item-name">文章总数 :</div></div><div class="item-count">18</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-stopwatch"></i><div class="item-name">建站天数 :</div></div><div class="item-count" id="runtimeshow" data-publishDate="2024-10-25T00:00:00.000Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-font"></i><div class="item-name">全站字数 :</div></div><div class="item-count">34k</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-universal-access"></i><div class="item-name">总访客数 :</div></div><div class="item-count" id="busuanzi_value_site_uv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-square-poll-vertical"></i><div class="item-name">总访问量 :</div></div><div class="item-count" id="busuanzi_value_site_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">6</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">博客</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://pan.quark.cn/s/b15d46941933" title="文章工具"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/favicon.ico" alt="文章工具"/><span class="back-menu-item-text">文章工具</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://xenoecho.us.kg" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/ico/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-box-archive"></use></svg><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-shapes"></use></svg><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-tags"></use></svg><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-link"></use></svg><span> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-music"></use></svg><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/books/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-book"></use></svg><span> 图书馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/movies/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-pay-movies"></use></svg><span> 电影院</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/essay/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-lightbulb"></use></svg><span> 胡思乱想</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-shoe-prints"></use></svg><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Burp-Suite/" style="font-size: 0.88rem;">Burp Suite<sup>2</sup></a><a href="/tags/HTTP/" style="font-size: 0.88rem;">HTTP<sup>1</sup></a><a href="/tags/Kali/" style="font-size: 0.88rem;">Kali<sup>4</sup></a><a href="/tags/Kali-tools/" style="font-size: 0.88rem;">Kali tools<sup>3</sup></a><a href="/tags/Linux/" style="font-size: 0.88rem;">Linux<sup>3</sup></a><a href="/tags/Shell/" style="font-size: 0.88rem;">Shell<sup>1</sup></a><a href="/tags/Sql%E6%B3%A8%E5%85%A5/" style="font-size: 0.88rem;">Sql注入<sup>1</sup></a><a href="/tags/vuInhub/" style="font-size: 0.88rem;">vuInhub<sup>4</sup></a><a href="/tags/webshell/" style="font-size: 0.88rem;">webshell<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 0.88rem;">博客<sup>1</sup></a><a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" style="font-size: 0.88rem;">大模型<sup>1</sup></a><a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 0.88rem;">翻译<sup>1</sup></a></div></div><hr/></div></div><div id="keyboard-tips"><div class="keyboardTitle">博客快捷键</div><div class="keybordList"><div class="keybordItem"><div class="keyGroup"><div class="key">shift K</div></div><div class="keyContent"><div class="content">关闭快捷键功能</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift A</div></div><div class="keyContent"><div class="content">打开/关闭中控台</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift M</div></div><div class="keyContent"><div class="content">播放/暂停音乐</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift D</div></div><div class="keyContent"><div class="content">深色/浅色显示模式</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift S</div></div><div class="keyContent"><div class="content">站内搜索</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift R</div></div><div class="keyContent"><div class="content">随机访问</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift H</div></div><div class="keyContent"><div class="content">返回首页</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift F</div></div><div class="keyContent"><div class="content">友链鱼塘</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift L</div></div><div class="keyContent"><div class="content">友链页面</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift P</div></div><div class="keyContent"><div class="content">关于本站</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift I</div></div><div class="keyContent"><div class="content">原版/本站右键菜单</div></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8598611923" server="tencent" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>必应搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;/music/&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.cbd.int/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script>var meting_api = "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
+</script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(() => {
+  async function loadWaline () {
+    try {
+      const eleGroup = document.querySelectorAll('#recent-posts .waline-comment-count')
+      const keyArray = Array.from(eleGroup).map(i => i.getAttribute('data-path'))
+
+      const res = await fetch(`https://waline.xenoecho.us.kg/api/comment?type=count&url=${keyArray}`, { method: 'GET' })
+      const result = await res.json()
+      
+      result.data.forEach((count, index) => {
+        eleGroup[index].textContent = count
+      })
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  window.pjax ? loadWaline() : window.addEventListener('load', loadWaline)
+})()</script><input type="hidden" name="page-type" id="page-type" value="anzhiyu"></div><script>window.addEventListener('load', () => {
+  const changeContent = content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = async () => {
+    try {
+      const res = await fetch('https://waline.xenoecho.us.kg/api/comment?type=recent&count=6', { method: 'GET' })
+      const result = await res.json()
+      const walineArray = result.data.map(e => {
+        return {
+          'content': changeContent(e.comment),
+          'avatar': e.avatar,
+          'nick': e.nick,
+          'url': e.url + '#' + e.objectId,
+          'date': e.time || e.insertedAt
+        }
+      })
+      saveToLocal.set('waline-newest-comments', JSON.stringify(walineArray), 10/(60*24))
+      generateHtml(walineArray)
+    } catch (err) {
+      console.error(err)
+      const $dom = document.querySelector('#card-newest-comments .aside-list')
+      $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+    }
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('waline-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script async src="https://at.alicdn.com/t/c/font_4773714_xy6q4g0wxsg.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/"]):not([href="b"]):not([href="o"]):not([href="o"]):not([href="k"]):not([href="s"]):not([href="/"]):not([href=" "]):not([href="/"]):not([href="l"]):not([href="i"]):not([href="n"]):not([href="k"]):not([href="/"]):not([href=" "]):not([href="/"]):not([href="m"]):not([href="o"]):not([href="v"]):not([href="i"]):not([href="e"]):not([href="s"]):not([href="/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script><div id="greetingBox"></div></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
